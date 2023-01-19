@@ -6,4 +6,6 @@ using UnityEngine;
 public class PowerUps : ScriptableObject
 {
     public string type;
+    public float moveSpeed;
+
 }

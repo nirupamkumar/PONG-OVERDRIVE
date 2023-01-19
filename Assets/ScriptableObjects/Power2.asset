@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Power2
   m_EditorClassIdentifier: 
   type: Over Speed
+  moveSpeed: 20

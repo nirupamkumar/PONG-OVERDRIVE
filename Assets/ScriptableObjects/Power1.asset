@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Power1
   m_EditorClassIdentifier: 
   type: Slow Effect
+  moveSpeed: 5

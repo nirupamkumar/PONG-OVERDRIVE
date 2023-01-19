@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Power3
   m_EditorClassIdentifier: 
   type: Sinusoid Ball Movement
+  moveSpeed: 10
