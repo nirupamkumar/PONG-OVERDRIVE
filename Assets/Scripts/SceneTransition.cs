@@ -22,10 +22,5 @@ public class SceneTransition : MonoBehaviour
         Debug.Log("Application Quit");
     }
 
-    public void MainMenu()
-    {
-
-    }
-
 
 }

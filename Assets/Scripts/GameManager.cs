@@ -11,11 +11,12 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
-
     private void PauseGame()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
+        {
             SceneManager.LoadScene("MainMenu");
-        
+        }
+
     }
 }
