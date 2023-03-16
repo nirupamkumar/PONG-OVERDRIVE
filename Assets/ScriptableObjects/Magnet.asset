@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eb0008896ea4f8e4e99ec9c0b5ce115a, type: 3}
-  m_Name: Power3
+  m_Name: Magnet
   m_EditorClassIdentifier: 
-  type: Sinusoid Ball Movement
-  moveSpeed: 10
+  type: Magnet
+  moveSpeed: 0
+  powersPrefabs: {fileID: 8273315119926566570, guid: 72bdfcc3d5b11ab4e8356314299f8b99, type: 3}

@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: Blocker
   moveSpeed: 10
+  powersPrefabs: {fileID: 4522093168240877557, guid: a5585adcc11d78c418f317eba2a3faed, type: 3}

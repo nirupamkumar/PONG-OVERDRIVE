@@ -7,5 +7,6 @@ public class PowerUps : ScriptableObject
 {
     public string type;
     public float moveSpeed;
+    public GameObject powersPrefabs;
 
 }
