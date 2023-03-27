@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boll : MonoBehaviour
+public class Ball : MonoBehaviour
 {
     public float StartSpeed = 5.0f;
     public float MaxSpeed = 20.0f;
@@ -11,11 +11,6 @@ public class Boll : MonoBehaviour
     private float currentSpeed;
     private Vector2 currentDir;
     private bool resetting = false;
-
-    //paddles
-    public GameObject paddle1;
-    public GameObject paddle2;
-    public GameObject lastHitPaddle;
 
     private void Start()
     {
@@ -44,7 +39,6 @@ public class Boll : MonoBehaviour
         else if( other.tag == "Goal")
         {
             StartCoroutine(resetBall());
-            currentDir.x *= -1;
         }
 
         currentSpeed += SpeedIncrease;
@@ -67,10 +61,7 @@ public class Boll : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if ( collision.gameObject == paddle1 || collision.gameObject == paddle2 )
-        {
-
-        }
+        
     }
 
 

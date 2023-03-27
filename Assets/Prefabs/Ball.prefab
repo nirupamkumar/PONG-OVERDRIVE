@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6263861298105664540}
   - component: {fileID: 7414255393929394578}
   m_Layer: 0
-  m_Name: Boll
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,6 +130,3 @@ MonoBehaviour:
   StartSpeed: 5
   MaxSpeed: 20
   SpeedIncrease: 0.25
-  paddle1: {fileID: 0}
-  paddle2: {fileID: 0}
-  lastHitPaddle: {fileID: 0}
