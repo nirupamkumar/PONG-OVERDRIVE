@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boll : MonoBehaviour
+public class Ball : MonoBehaviour
 {
     public float StartSpeed = 5.0f;
     public float MaxSpeed = 20.0f;
