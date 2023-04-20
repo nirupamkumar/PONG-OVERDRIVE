@@ -8,6 +8,9 @@ TagManager:
   - Goal
   - P1
   - P2
+  - Ball
+  - PowerUp
+  - Blocker
   layers:
   - Default
   - TransparentFX
