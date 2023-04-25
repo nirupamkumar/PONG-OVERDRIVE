@@ -8,14 +8,10 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public GameObject blockerPrefab;
-    private bool hasBeenInstanctiated = false;
+    private bool activeBlocker = false;
 
-    //public GameObject[] powerUpPrefabs;
+    public GameObject[] powerUpPrefabs;
     public bool activePowerup = false;
-    public GameObject slowEffectObj;
-    public GameObject fastEffectObj;
-    public GameObject magnetEffectObj;
-    public GameObject sinusoidEffectObj;
 
     void Awake()
     {
@@ -29,14 +25,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     void Update()
     {
 
-        if (!hasBeenInstanctiated)
+        if (!activeBlocker)
         {
             StartCoroutine(SpawnBlockerTime());
-            hasBeenInstanctiated = true;
+            activeBlocker = true;
+        }
+
+        if (!activePowerup)
+        {
+            StartCoroutine(SpawnPowerTime());
+            activePowerup = true;
         }
     }
 
@@ -53,50 +54,38 @@ public class GameManager : MonoBehaviour
             Instantiate(blockerPrefab, new Vector3(x, y, 0), Quaternion.identity);
     }
 
-    private void SpawnPowerUp(bool spawnRandomPowers)
+    public void SpawnBlockerAfterItDestroyed(bool spawnBlocker)
     {
-        if (!activePowerup)
-        {
-            int randomPowerup = Random.Range(0, 4);
-            GameObject powerupPrefab;
-
-            switch (randomPowerup)
-            {
-                case 0:
-                    powerupPrefab = slowEffectObj;
-                    break;
-                case 1:
-                    powerupPrefab = fastEffectObj;
-                    break;
-                case 2:
-                    powerupPrefab = magnetEffectObj;
-                    break;
-                case 3:
-                    powerupPrefab = sinusoidEffectObj;
-                    break;
-                default:
-                    powerupPrefab = null;
-                    break;
-            }
-
-            if (powerupPrefab != null)
-            {
-                float spawnX = Random.Range(-4f, 4f);
-                float spawmY = Random.Range(-3f, 3f);
-                Vector3 spawnPosition = new Vector3(spawnX, spawmY, 0f);
-
-                GameObject powerup = Instantiate(powerupPrefab, spawnPosition, Quaternion.identity);
-            }
-        }
+        activeBlocker = spawnBlocker;
     }
 
-    public void DestroyBlocker(GameObject gameObject)
+    IEnumerator SpawnPowerTime()
+    {
+        yield return new WaitForSecondsRealtime(Random.Range(0f, 20f));
+        //yield return new WaitForSecondsRealtime(5);
+        SpawnPowerUp();  
+    }
+         
+    public void SpawnPowerUp()
+    {
+        int randomPowerup = Random.Range(0, powerUpPrefabs.Length);
+        GameObject powerupPrefabGO = powerUpPrefabs[randomPowerup]; 
+
+        float spawnX = Random.Range(-4f, 4f);
+        float spawmY = Random.Range(-3f, 3f);
+        Vector3 spawnPosition = new Vector3(spawnX, spawmY, 0f);
+        GameObject powerup = Instantiate(powerupPrefabGO, spawnPosition, Quaternion.identity);
+    }
+
+    public void SpawnPowerupsAfterDestroyed(bool spawnPowerups)
+    {
+        activePowerup = spawnPowerups;
+    }
+
+    public void DestroyGameObject(GameObject gameObject)
     {
         Destroy(gameObject);
     }
 
-    public void SpawnBlockerAfterItDestroyed(bool spawnBlocker)
-    {
-        hasBeenInstanctiated = spawnBlocker;
-    }
+
 }
