@@ -6,9 +6,9 @@ public class BlockerController : MonoBehaviour
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Ball")
+        if (collision.gameObject.tag == "Ball")
         {
-            GameManager.instance.DestroyBlocker(gameObject);
+            GameManager.instance.DestroyGameObject(gameObject);
             GameManager.instance.SpawnBlockerAfterItDestroyed(false);
         }
     }
