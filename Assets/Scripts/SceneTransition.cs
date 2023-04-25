@@ -22,5 +22,4 @@ public class SceneTransition : MonoBehaviour
         Debug.Log("Application Quit");
     }
 
-
 }
