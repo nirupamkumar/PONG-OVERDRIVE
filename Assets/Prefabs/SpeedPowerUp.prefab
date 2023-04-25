@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2042186304717006623}
   - component: {fileID: 2042186304717006620}
   - component: {fileID: 2042186304717006621}
+  - component: {fileID: 5700468581406059447}
   m_Layer: 0
   m_Name: SpeedPowerUp
-  m_TagString: Untagged
+  m_TagString: PowerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,6 +30,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2042186305371412119}
   m_Father: {fileID: 0}
@@ -53,6 +55,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -96,6 +99,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5700468581406059447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042186304717006618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38e05db288bf1d4a9e1b0481e38fbf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerupMoveSpeed: 25
 --- !u!1 &2042186305371412116
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,6 +140,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.87, y: 1.05, z: 0}
   m_LocalScale: {x: 0.42511445, y: 0.42511445, z: 0.42511445}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2042186304717006622}
   m_RootOrder: 0
@@ -139,6 +156,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -190,4 +208,4 @@ TextMesh:
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
-    rgba: 4282338303
+    rgba: 4278255470
