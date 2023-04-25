@@ -12,6 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0008896ea4f8e4e99ec9c0b5ce115a, type: 3}
   m_Name: Overspeed
   m_EditorClassIdentifier: 
-  type: Over Speed
-  moveSpeed: 20
-  powersPrefabs: {fileID: 2042186304717006618, guid: c31cdc5ba2d597a44bb90bf63e99426f, type: 3}
+  powerUpName: OverSpeed
+  powersPrefab: {fileID: 2042186304717006618, guid: c31cdc5ba2d597a44bb90bf63e99426f, type: 3}
