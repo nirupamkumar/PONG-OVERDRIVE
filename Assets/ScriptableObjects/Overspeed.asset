@@ -14,3 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   powerUpName: OverSpeed
   powersPrefab: {fileID: 2042186304717006618, guid: c31cdc5ba2d597a44bb90bf63e99426f, type: 3}
+  moveSpeed: 25

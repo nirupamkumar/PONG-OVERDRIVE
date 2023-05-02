@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0008896ea4f8e4e99ec9c0b5ce115a, type: 3}
   m_Name: StopEffect
   m_EditorClassIdentifier: 
-  powerUpName: 
-  powersPrefab: {fileID: 0}
+  powerUpName: StopEffect
+  powersPrefab: {fileID: 8273315119926566570, guid: 72bdfcc3d5b11ab4e8356314299f8b99, type: 3}
+  moveSpeed: 0
