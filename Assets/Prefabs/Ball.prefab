@@ -129,8 +129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  player1Paddle: {fileID: 0}
-  player2Paddle: {fileID: 0}
 --- !u!114 &7603249519953667655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,3 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2366b9d77d9af3841bdb868d7307710a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  paddle1: {fileID: 0}
+  paddle2: {fileID: 0}
+  lastHitPaddle: {fileID: 0}
