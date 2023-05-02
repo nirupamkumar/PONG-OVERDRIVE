@@ -9,7 +9,7 @@ public class PaddleController : MonoBehaviour
     public string inputAxis;
     public string playerTag;
     private float currentMoveSpeed;
-    private float powerupDuration = 3.0f;
+    private float powerupDuration = 2.5f;
     private bool hasPowerup;
 
     private void Start()
