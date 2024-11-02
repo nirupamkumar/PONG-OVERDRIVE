@@ -11,8 +11,6 @@ public class SceneTransition : MonoBehaviour
     {
         int sceneIndex = Random.Range(1, totalScenes);
         SceneManager.LoadScene(sceneIndex);
-
-        //Debug.Log("Scene loaded" + sceneIndex);
     }
 
     public void QuitGame()
@@ -21,5 +19,4 @@ public class SceneTransition : MonoBehaviour
 
         Debug.Log("Application Quit");
     }
-
 }

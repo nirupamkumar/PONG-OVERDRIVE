@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PauseGame : MonoBehaviour
 {
-   
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Space))

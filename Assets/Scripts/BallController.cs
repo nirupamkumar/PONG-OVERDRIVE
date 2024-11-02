@@ -6,7 +6,7 @@ public class BallController : MonoBehaviour
 {
     //ball movement
     public float speed = 5.0f;
-    private float playAreaWidth = 8.2f; //public float playAreaHeight = 5.0f;
+    private float playAreaWidth = 8.2f;
     private Vector3 ballDirection;
     private float ballMovementSpeed;
 
@@ -21,42 +21,16 @@ public class BallController : MonoBehaviour
 
     private void Update()
     {
-
         if (sinWaveActive)
         {
             //Amplitude can be adjusted from 0.3f to 0.5f
             float yPosition = Mathf.Sin(Time.time * Mathf.PI * 2 / sinWaveduration) * 0.3f;
             transform.position += new Vector3(ballDirection.x, yPosition, ballDirection.z) * ballMovementSpeed * Time.deltaTime;
-
-            //Debug.Log("sin wave power activated");
         }
         else
         {
             transform.position += ballDirection * ballMovementSpeed * Time.deltaTime;
         }
-
-        /*
-        if (transform.position.y > playAreaHeight || transform.position.y > -playAreaWidth)
-        {
-            ballDirection.y = -ballDirection.y;
-        }
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, ballDirection, out hit, 0.1f))
-        {
-            if (hit.collider.tag == "P1" || hit.collider.tag == "P2")
-            {
-                ballDirection.x = -ballDirection.x;
-                //ballMovementSpeed += 1.0f;
-            }
-            else if (hit.collider.tag == "Blocker")
-            {
-                ballDirection = -ballDirection;
-                Destroy(hit.collider.gameObject);
-            }
-        }
-        */
 
         if (transform.position.x > playAreaWidth)
         {
@@ -67,23 +41,6 @@ public class BallController : MonoBehaviour
             ResetBall(1);
         }
     }
-
-    /*
-    IEnumerator ResetBallDelay(float delay, int direction)
-    {
-        transform.position = Vector3.zero;
-
-        yield return new WaitForSecondsRealtime(delay);
-
-        ballDirection = new Vector3(direction, Random.Range(-0.5f, 0.5f), 0f).normalized;
-        ballMovementSpeed = speed;
-    }
-
-    void ResetBall(int direction)
-    {
-        StartCoroutine(ResetBallDelay(2.0f, direction));
-    }
-    */
 
     void ResetBall(int direction)
     {
@@ -120,5 +77,4 @@ public class BallController : MonoBehaviour
     {
         return sinWaveActive;
     }
-
 }

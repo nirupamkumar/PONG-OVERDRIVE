@@ -5,7 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-
     public GameObject blockerPrefab;
     private bool activeBlocker = false;
 
@@ -26,7 +25,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
         if (!activeBlocker)
         {
             StartCoroutine(SpawnBlockerTime());
@@ -48,9 +46,9 @@ public class GameManager : MonoBehaviour
 
     void SpawnBlocker()
     {
-            float x = Random.Range(-5.0f, 5.0f);
-            float y = Random.Range(-3.0f, 3.0f);
-            Instantiate(blockerPrefab, new Vector3(x, y, 0), Quaternion.identity);
+        float x = Random.Range(-5.0f, 5.0f);
+        float y = Random.Range(-3.0f, 3.0f);
+        Instantiate(blockerPrefab, new Vector3(x, y, 0), Quaternion.identity);
     }
 
     public void SpawnBlockerAfterItDestroyed(bool spawnBlocker)
@@ -61,7 +59,6 @@ public class GameManager : MonoBehaviour
     IEnumerator SpawnPowerTime()
     {
         yield return new WaitForSecondsRealtime(Random.Range(0f, 20f));
-        //yield return new WaitForSecondsRealtime(5);
         SpawnPowerUp();  
     }
          
@@ -85,6 +82,4 @@ public class GameManager : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-
 }

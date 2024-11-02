@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class LastHitPaddleController : MonoBehaviour
 {
-    
     public GameObject paddle1;
     public GameObject paddle2;
-
     public GameObject lastHitPaddle;
 
     private void OnCollisionEnter(Collision col)
@@ -17,7 +15,6 @@ public class LastHitPaddleController : MonoBehaviour
             lastHitPaddle = col.gameObject;
         }
     }
-
 
     public GameObject GetOppositePaddle(GameObject currentPaddle)
     {
