@@ -4,28 +4,19 @@ using UnityEngine;
 
 public class PauseGame : MonoBehaviour
 {
+    private bool isPaused = false;
+
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            if (Time.timeScale == 0)
-            {
-                Resume();
-            }
-            else
-            {
-                Pause();
-            }
+            TogglePause();
         }
     }
 
-    void Pause()
+    private void TogglePause()
     {
-        Time.timeScale = 0;
-    }
-
-    void Resume()
-    {
-        Time.timeScale = 1;
+        isPaused = !isPaused;
+        Time.timeScale = isPaused ? 1 : 0;
     }
 }
