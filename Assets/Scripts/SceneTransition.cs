@@ -6,6 +6,12 @@ using UnityEngine.SceneManagement;
 public class SceneTransition : MonoBehaviour
 {
     public int totalScenes = 4;
+    public GameObject leaderBoardUI;
+
+    private void Awake()
+    {
+        leaderBoardUI.SetActive(false);
+    }
 
     public void Play()
     {
@@ -13,10 +19,8 @@ public class SceneTransition : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
-    public void QuitGame()
+    public void LeaderBoard()
     {
-        Application.Quit();
-
-        Debug.Log("Application Quit");
+        leaderBoardUI.SetActive(true);
     }
 }
