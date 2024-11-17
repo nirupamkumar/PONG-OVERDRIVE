@@ -5,13 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class EscapeKey : MonoBehaviour
 {
-    public string sceneName;
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }
