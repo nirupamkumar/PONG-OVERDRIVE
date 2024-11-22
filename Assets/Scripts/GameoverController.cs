@@ -47,7 +47,7 @@ public class GameoverController : MonoBehaviour
             for (int i = timeCount; i > 0; i--)
             {
                 timerText.text = i.ToString();
-                yield return new WaitForSeconds(1f);
+                yield return new WaitForSeconds(1.5f);
             }
 
             timerText.text = "0";
