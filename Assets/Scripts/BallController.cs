@@ -13,6 +13,8 @@ public class BallController : MonoBehaviour
     private bool sinWaveActive = false;
     private float sinWaveduration = 2.5f;
 
+    private bool isGameOver = false;
+
     private void Start()
     {
         ballDirection = new Vector3(Random.Range(-1.0f, 1.0f), 0, Random.Range(-1.0f, 1.0f)).normalized;
@@ -21,6 +23,11 @@ public class BallController : MonoBehaviour
 
     private void Update()
     {
+        if (isGameOver)
+        {
+            return;
+        }
+
         if (sinWaveActive)
         {
             //Amplitude can be adjusted from 0.3f to 0.5f
@@ -76,5 +83,22 @@ public class BallController : MonoBehaviour
     public bool HasSinWavePowerEffect()
     {
         return sinWaveActive;
+    }
+
+    public void StopBallGradually()
+    {
+        isGameOver = true;
+        StartCoroutine(SlowDownBall());
+    }
+
+    private IEnumerator SlowDownBall()
+    {
+        while (speed > 0f)
+        {
+            speed -= Time.deltaTime * 2.5f;
+            yield return null;
+        }
+
+        speed = 0f;
     }
 }
