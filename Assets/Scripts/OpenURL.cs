@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class OpenURL : MonoBehaviour
 {
+    /*
     public string githubURL = "https://github.com/nirupamkumar/PONG-OVERDRIVE.git";
     public string linkedInURL = "https://www.linkedin.com/in/nirupam-kumar-mundra-537b39233/";
 
@@ -33,4 +34,5 @@ public class OpenURL : MonoBehaviour
     // WebGL-specific function to open a URL in a new tab
     [System.Runtime.InteropServices.DllImport("__Internal")]
     private static extern void OpenURLInWebGL(string url);
+    */
 }
