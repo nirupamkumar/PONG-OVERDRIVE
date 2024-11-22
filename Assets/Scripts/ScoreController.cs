@@ -9,10 +9,23 @@ public class ScoreController : MonoBehaviour
     public string playerIdentifier;
     private int maxScore = 5;
     private int score = 0;
+    private bool gameover = false;
+
+    private void Start()
+    {
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.RegisterPlayer(this);
+        }
+        else
+        {
+            Debug.LogError("GameManager instance in ScoreController not found.");
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Ball")
+        if (!gameover && collision.gameObject.tag == "Ball")
         {
             score++;
             scoreText.text = score.ToString();
@@ -26,7 +39,16 @@ public class ScoreController : MonoBehaviour
 
     public void GameOver()
     {
-        //game over display script
+        gameover = true;
+
+        if (GameManager.instance != null)
+        {
+            GameManager.instance.GameOver(playerIdentifier);
+        }
+        else
+        {
+            Debug.LogError("GameManager instance in ScoreController not found.");
+        }
     }
 
     public string GetPlayerIdentifier()
