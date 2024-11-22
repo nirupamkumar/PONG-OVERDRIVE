@@ -2730,7 +2730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 753969248}
-  playerIdentifier: P1
+  playerIdentifier: P2
 --- !u!1 &1610461537
 GameObject:
   m_ObjectHideFlags: 0
@@ -2947,8 +2947,8 @@ MonoBehaviour:
   - {fileID: 2042186304717006618, guid: c31cdc5ba2d597a44bb90bf63e99426f, type: 3}
   - {fileID: 8273315119926566570, guid: 72bdfcc3d5b11ab4e8356314299f8b99, type: 3}
   activePowerup: 0
-  player1ScoreController: {fileID: 1583976233}
-  player2ScoreController: {fileID: 1792359865}
+  player1ScoreController: {fileID: 1792359865}
+  player2ScoreController: {fileID: 1583976233}
   gameoverController: {fileID: 1371846718}
 --- !u!4 &1788176879
 Transform:
@@ -3032,7 +3032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2076100867}
-  playerIdentifier: P2
+  playerIdentifier: P1
 --- !u!1 &1931664854
 GameObject:
   m_ObjectHideFlags: 0
@@ -3842,9 +3842,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1062173760}
     m_Modifications:
+    - target: {fileID: 1883932885213414784, guid: 3c83ddc9175ba604d8bc3dc3f69ec170, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223798328167565514, guid: 3c83ddc9175ba604d8bc3dc3f69ec170, type: 3}
+      propertyPath: m_text
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3622222062429539237, guid: 3c83ddc9175ba604d8bc3dc3f69ec170, type: 3}
       propertyPath: m_Name
       value: --GameOver--
+      objectReference: {fileID: 0}
+    - target: {fileID: 5220320670303843149, guid: 3c83ddc9175ba604d8bc3dc3f69ec170, type: 3}
+      propertyPath: m_text
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7926723151605582928, guid: 3c83ddc9175ba604d8bc3dc3f69ec170, type: 3}
       propertyPath: m_Pivot.x
