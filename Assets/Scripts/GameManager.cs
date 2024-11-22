@@ -5,11 +5,17 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+
     public GameObject blockerPrefab;
     private bool activeBlocker = false;
 
     public GameObject[] powerUpPrefabs;
     public bool activePowerup = false;
+
+    public ScoreController player1ScoreController;
+    public ScoreController player2ScoreController;
+
+    public GameoverController gameoverController;
 
     void Awake()
     {
@@ -35,6 +41,18 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(SpawnPowerTime());
             activePowerup = true;
+        }
+    }
+
+    public void RegisterPlayer(ScoreController scoreController)
+    {
+        if (scoreController.playerIdentifier == "P1")
+        {
+            player1ScoreController = scoreController;
+        }
+        else if (scoreController.playerIdentifier == "P2")
+        {
+            player2ScoreController = scoreController;
         }
     }
 
@@ -76,6 +94,14 @@ public class GameManager : MonoBehaviour
     public void SpawnPowerupsAfterDestroyed(bool spawnPowerups)
     {
         activePowerup = spawnPowerups;
+    }
+
+    public void GameOver(string winneridentifier)
+    {
+        int p1score = player1ScoreController.GetScore();
+        int p2score = player2ScoreController.GetScore();
+
+        gameoverController.DisplayGameOver(winneridentifier, p1score, p2score);
     }
 
     public void DestroyGameObject(GameObject gameObject)
